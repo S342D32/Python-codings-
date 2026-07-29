@@ -1,0 +1,18 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if len(s) <= 1:
+            return s
+        def expand_around(left:int ,right :int)-> str:
+            while left >=0 and right < len(s) and s[left] == s[right]:
+                left -=1
+                right +=1
+            return s[left+1:right]
+        longest =""
+        for i in range(len(s)):
+            odd_palli = expand_around(i,i)
+            even_palli = expand_around(i,i+1)
+            longest = max(longest,odd_palli,even_palli,key = len)
+        return longest
+
+s = Solution()
+print(s.longestPalindrome("babad")) 
