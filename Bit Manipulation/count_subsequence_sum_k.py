@@ -17,3 +17,5 @@ def backtrack(index,total):
 
 print(backtrack(0,0))
 
+# TC=O(2^n)
+# SC=O(n)
