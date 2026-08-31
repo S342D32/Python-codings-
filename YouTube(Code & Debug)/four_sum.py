@@ -29,6 +29,6 @@ def four_sum(arr,tar):
 
 print(four_sum([1,0,-1,0,-2,2], 0))
 
-# TC = O(N^2)
+# TC = O(N^3)
 # SC = O(1)
       
