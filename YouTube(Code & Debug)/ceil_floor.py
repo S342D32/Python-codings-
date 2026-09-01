@@ -14,3 +14,5 @@ def ceil_floor(arr, tar):
     return floor_val, ceil_val
 
 print(ceil_floor([2,3,4,5,7,3], 4))
+# TC=O(nlogn)
+# SC=O(1)
