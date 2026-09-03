@@ -19,3 +19,6 @@ brackets = [""] * (2 * n)
 result = []
 solve(0, 0, brackets, result)
 print(result)
+
+# TC:O(2^n)
+# SC=O(2N) stack space
