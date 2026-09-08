@@ -13,3 +13,6 @@ def solve(index,total,subset,result,arr,target,k):
   return result
 
 print(solve(0,0,[],[],[2,3,4,5,6,7],7,2))
+
+
+# TC=O()
