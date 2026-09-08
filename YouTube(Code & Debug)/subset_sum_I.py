@@ -1,16 +1,15 @@
-def subset_sum(index,arr,subset,result):
-  n =len(arr)
-  if index == n:
-     result.append(subset.copy())
+def subset_sum(index,total,arr,result):
+  if index >= len(arr):
+     result.append(total)
      return
 
-  subset.append(arr[index]) 
-  subset_sum(index+1,arr,subset,result)
-  subset.pop()
-  subset_sum(index+1,arr,subset,result)
+  sum =total+arr[index] 
+  subset_sum(index+1,sum,arr,result)
+  sum = total
+  subset_sum(index+1,sum,arr,result)
   return result
 
-print(subset_sum(0,[1,2,3],[],[]))
+print(subset_sum(0,0,[1,2,3],[]))
 
 
 
