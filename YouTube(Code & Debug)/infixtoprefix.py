@@ -9,7 +9,10 @@ class Solution:
             return 3
         return -1
 
-    def InfixtoPostfix(self, s):
+    def InfixtoPrefix(self, s):
+        s = s[::-1]
+        s = s.replace("(", "temp").replace(")", "(").replace("temp", ")")
+
         stack = []
         result = []
 
@@ -28,10 +31,9 @@ class Solution:
 
             else:
                 while (stack and stack[-1] != "(" and
-                       (self.precedence(stack[-1]) >
-                        self.precedence(char) or
-                        (self.precedence(stack[-1]) ==
-                         self.precedence(char) and char != "^"))):
+                       (self.precedence(stack[-1]) > self.precedence(char) or
+                        (self.precedence(stack[-1]) == self.precedence(char)
+                         and char == "^"))):
                     result.append(stack.pop())
 
                 stack.append(char)
@@ -39,6 +41,5 @@ class Solution:
         while stack:
             result.append(stack.pop())
 
-        return "".join(result)
-
+        return "".join(result[::-1])
 # Time Complexity = O(N); Space Complexity = O(N).
