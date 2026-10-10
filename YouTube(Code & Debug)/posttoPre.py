@@ -20,4 +20,7 @@ class Solution:
 
     # The final element in the stack is the prefix expression
     return stack[-1]
+
+  # TC=O(N)
+# SC=O(N)
   

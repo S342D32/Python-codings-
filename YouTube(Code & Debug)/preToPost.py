@@ -19,4 +19,5 @@ class Solution:
         stack.append(new_exp)
     return stack[-1]
 
-  
+  # TC=O(N)
+# SC=O(N)
