@@ -18,5 +18,5 @@ arr = [4,7,1,1,2,-3,-7,17,15,-18,-19]
 print(asteroidCollision(arr))
 
 
-# TC:O(N)
+# TC:O(2N) bcause we iterate and also pop
 # SC:O(N)
