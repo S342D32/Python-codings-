@@ -16,6 +16,29 @@
 
 # Better
 # ------------------------
+# def FruitInBasket(fruits):
+#   n = len(fruits)
+#   max_len=0
+#   basket=dict()
+#   L=0
+#   R=0
+#   while R <n:
+#     basket[fruits[R]] = basket.get(fruits[R],0)+1
+#     while len(basket) >2:
+#       basket[fruits[L]] -= 1
+#       if basket[fruits[L]] ==0:
+#         del basket[fruits[L]]
+#       L+=1
+#     if len(basket) <=2:
+#       max_len  = max(max_len,R-L+1)
+#     R+=1
+#   return max_len
+
+
+# TC= O(2N)==O(N)
+# SC= O(1)
+
+# Optimal
 def FruitInBasket(fruits):
   n = len(fruits)
   max_len=0
@@ -24,7 +47,7 @@ def FruitInBasket(fruits):
   R=0
   while R <n:
     basket[fruits[R]] = basket.get(fruits[R],0)+1
-    while len(basket) >2:
+    if len(basket) >2:
       basket[fruits[L]] -= 1
       if basket[fruits[L]] ==0:
         del basket[fruits[L]]
@@ -34,6 +57,7 @@ def FruitInBasket(fruits):
     R+=1
   return max_len
 
-
+# TC= O(N)
+# SC= O(1)
 
 print(FruitInBasket([1,3,3,1,1,2,3,1,1,3,2]))
