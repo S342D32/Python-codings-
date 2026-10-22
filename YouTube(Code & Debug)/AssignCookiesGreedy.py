@@ -6,7 +6,7 @@ def AssignCookiesGreedy(G,S):
   G.sort()
   S.sort()
   count=0
-  while left <n and right <n:
+  while left <n and right <m:
     if G[left] <= S[right]:
       count+=1
       left +=1
