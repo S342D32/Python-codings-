@@ -15,5 +15,8 @@ def MaxPointFromCards(arr,k):
     maxi = max(maxi,left_sum+right_sum)
   return maxi
 
+# TC=O(N)
+# SC=O(1)
+
 arr =[1,2,3,4,5,6,2,5]
 print(MaxPointFromCards(arr,3))
