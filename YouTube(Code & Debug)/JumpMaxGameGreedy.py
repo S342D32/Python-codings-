@@ -7,5 +7,5 @@ def JumpGameGreedy(arr):
     max_index = max(max_index,i+arr[i])
   return True
 
-arr =[2,3,4,0,5,6]
+arr = [3, 2, 1, 0, 4]
 print(JumpGameGreedy(arr))
