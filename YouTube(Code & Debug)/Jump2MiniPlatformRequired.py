@@ -17,33 +17,54 @@
 # SC=O(N)
 
 
-def JumpMiniPlatformRequired(arr, index, dp):
-    last_index = len(arr) - 1
+# def JumpMiniPlatformRequired(arr, index, dp):
+#     last_index = len(arr) - 1
 
-    if index >= last_index:
-        return 0
+#     if index >= last_index:
+#         return 0
 
-    if dp[index] != -1:
-        return dp[index]
+#     if dp[index] != -1:
+#         return dp[index]
 
-    min_jump = float('inf')
+#     min_jump = float('inf')
 
-    for i in range(1, arr[index] + 1):
-        if index + i < len(arr):
-            result = JumpMiniPlatformRequired(arr, index + i, dp)
+#     for i in range(1, arr[index] + 1):
+#         if index + i < len(arr):
+#             result = JumpMiniPlatformRequired(arr, index + i, dp)
 
-            if result != float('inf'):
-                min_jump = min(min_jump, 1 + result)
+#             if result != float('inf'):
+#                 min_jump = min(min_jump, 1 + result)
 
-    dp[index] = min_jump
-    return dp[index]
+#     dp[index] = min_jump
+#     return dp[index]
 
 
-arr = [2, 3, 1, 1, 4]
-dp = [-1] * len(arr)
+# arr = [2, 3, 1, 1, 4]
+# dp = [-1] * len(arr)
 
-answer = JumpMiniPlatformRequired(arr, 0, dp)
-print(-1 if answer == float('inf') else answer)
+# answer = JumpMiniPlatformRequired(arr, 0, dp)
+# print(-1 if answer == float('inf') else answer)
 
 
 # Optimal solution
+# ----------------------------------------------
+def JumpMiniPlatformRequired(arr):
+  left =0
+  right =0
+  n = len(arr)
+  jump=0
+  while right < n-1:
+    farthest =0
+    for i in range(left,right+1):
+      farthest = max(farthest,i+arr[i])
+    left = right +1
+    right =farthest
+    jump +=1
+  return jump
+
+
+arr = [2, 3, 1, 1, 4]
+print(JumpMiniPlatformRequired(arr))
+
+# TC=O(N)
+# SC=O(1)
