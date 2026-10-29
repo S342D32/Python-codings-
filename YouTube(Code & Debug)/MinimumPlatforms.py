@@ -40,6 +40,8 @@ def Min_platform(arr,dep):
     ans = max(ans,count)
   return ans
 
+# TC=O(NlogN)
+# SC=O(1)
 
 
 
