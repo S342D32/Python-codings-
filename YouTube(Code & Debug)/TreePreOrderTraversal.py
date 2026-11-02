@@ -20,10 +20,10 @@ three.left = six
 three.right = seven
 
 
-def inorder_traversal(node):
+def preorder_traversal(node):
   if node == None:
     return
   print(node.val,end =" ")
-  inorder_traversal(node.left)
-  inorder_traversal(node.right)
-inorder_traversal(one)
+  preorder_traversal(node.left)
+  preorder_traversal(node.right)
+preorder_traversal(one)
