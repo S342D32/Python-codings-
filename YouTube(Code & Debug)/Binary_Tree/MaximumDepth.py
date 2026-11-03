@@ -20,13 +20,33 @@ two.right = five
 three.left = six
 three.right = seven
 
+# Recursion Method
+# def MaxDepth(node):
+#   if node is None:
+#     return 0
+#   leftHeight=MaxDepth(node.left)
+#   rightHeight=MaxDepth(node.right)
+#   return 1 + max(leftHeight,rightHeight)
 
+
+# Iterative Method
 def MaxDepth(node):
   if node is None:
     return 0
-  leftHeight=MaxDepth(node.left)
-  rightHeight=MaxDepth(node.right)
-  return 1 + max(leftHeight,rightHeight)
+  height =0
+  queue =deque([])
+  queue.append(node)
+  while len(queue) !=0:
+    size = len(queue)
+    height +=1
+    for _ in range(size):
+      current = queue.popleft()
+      if current.left is not None:
+        queue.append(current.left)
+      if current.right is not None:
+        queue.append(current.right)
+  return height
+
 
 # TC=O(N)
 # SC=O(N)
