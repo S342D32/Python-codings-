@@ -61,5 +61,5 @@ ans=[]
 print(RightSide(one,ans,0))
 
 # TC=O(N)
-# SC=O(H)
+# SC=O(H) stack space
 
