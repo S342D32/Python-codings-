@@ -45,7 +45,9 @@ grid = [
 ]
 
 print(rottenOrange(grid))
-      
+
+# TC =O(R*C)
+# SC =O(R*C)
       
 
 
