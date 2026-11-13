@@ -38,3 +38,6 @@ matrix=[[0,0,0,0],
         [0,0,1,0],
         [0,0,0,0]]
 print(NoOfEnclaves(matrix))
+
+# TC = O(N+M) +O((N+M)*4) + O(N*M) = O(N*M)
+# SC = O(N*M)
