@@ -1,5 +1,5 @@
 from collections import deque
-
+# BFS Method
 def NoOfEnclaves(matrix):
   rows = len(matrix)
   cols= len(matrix[0])
@@ -31,7 +31,36 @@ def NoOfEnclaves(matrix):
   return count         
 
 
+# DFS Method
+# def dfs(r,c,visited,grid,rows,cols):
+#   if r <0 or r>=rows or c<0 or c>=cols:
+#     return
+#   if visited[r][c] ==1 and grid[r][c] ==1:
+#     return
+#   if grid[r][c] ==0:
+#     return
+#   visited[r][c] =1
+#   dfs(r+1, c, visited, grid, rows, cols)
+#   dfs(r, c+1, visited, grid, rows, cols)
+#   dfs(r-1, c, visited, grid, rows, cols)
+#   dfs(r, c-1, visited, grid, rows, cols)
 
+
+# def noOfEnclaves(grid):
+#   rows = len(grid)
+#   cols = len(grid[0])
+#   visited = [[0 for i in range(cols)] for j in range(rows)]
+#   for r in range(rows):
+#     for c in range(cols):
+#       if r ==0 or c ==0 or r == rows-1 or c == cols-1:
+#         if grid[r][c] == 1 and visited[r][c] == 0:
+#           dfs(r, c, visited, grid, rows, cols)
+#   count =0
+#   for r in range(rows):
+#       for c in range(cols):
+#         if grid[r][c] == 1 and visited[r][c] == 0:
+#           count +=1
+#   return count
 
 matrix=[[0,0,0,0],
         [0,1,1,0],
