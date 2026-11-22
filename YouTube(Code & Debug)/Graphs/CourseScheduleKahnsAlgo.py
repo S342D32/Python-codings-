@@ -1,12 +1,11 @@
-
 from collections import deque
 
-def CycleDetectionInDirectedGraphKahnAlgo(V, edges):
+
+def CourseScheduleKahnsAlgo(V, edges):
     adj_list = [[] for _ in range(V)]
 
     for u, v in edges:
         adj_list[u].append(v)
-
     indegrees = [0] * V
 
     # Calculate indegree
@@ -31,14 +30,13 @@ def CycleDetectionInDirectedGraphKahnAlgo(V, edges):
             if indegrees[adj_node] == 0:
                 queue.append(adj_node)
 
-    # If all nodes are not processed, cycle exists
-    if len(result) != V:
+    # IAll courses can be completed.
+    if len(result) == V:
         return True
-
+    # cycle exists
     return False
 
 
 V = 4
 edges = [[0, 1], [0, 2], [1, 3], [2, 3]]
-print(CycleDetectionInDirectedGraphKahnAlgo(V, edges))
-
+print(CourseScheduleKahnsAlgo(V, edges))
