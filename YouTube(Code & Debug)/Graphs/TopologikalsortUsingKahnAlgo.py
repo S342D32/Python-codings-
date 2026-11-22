@@ -18,6 +18,8 @@ def TopologikalsortUsingKahnAlgo(V,edges):
         queue.append(adj_node)
   return result
 
-
+V = 4
+edges = [[0, 1], [0, 2], [1, 3], [2, 3]]
+print(TopologikalsortUsingKahnAlgo(V, edges))
 
 
