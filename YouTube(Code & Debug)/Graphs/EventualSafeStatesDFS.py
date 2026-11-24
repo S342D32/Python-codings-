@@ -33,3 +33,5 @@ graph = [[1, 2], [3], [3], []]
 
 print(EventualSafeStatesDFS(graph))
 
+# TC=O(V+E)
+# SC=O(V)
